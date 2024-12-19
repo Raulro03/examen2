@@ -12,10 +12,14 @@ Route::get('/user', function (Request $request) {
 
 Route::get('lists/categories', [CategoryController::class,  'list']);
 Route::get('subcategories', [SubcategoryController::class,  'index']);
+Route::post('subcategories', [SubcategoryController::class,  'store']);
+Route::put('subcategories/{subcategory}', [SubcategoryController::class,  'update']);
+Route::delete('subcategories/{subcategory}', [SubcategoryController::class,  'destroy']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('categories', CategoryController::class);
 
     Route::get('products', [ProductController::class,  'index'])
         ->middleware('throttle:products');
+    //Route::get('lists/subcategories', [ProductController::class,  'list']);
 });

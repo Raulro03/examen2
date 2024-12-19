@@ -78,6 +78,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        $category->subcategories()->delete();
         $category->delete();
 
         //return response(null, Response::HTTP_NO_CONTENT);
