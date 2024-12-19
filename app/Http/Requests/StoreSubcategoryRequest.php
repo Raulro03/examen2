@@ -12,6 +12,8 @@ class StoreSubcategoryRequest extends FormRequest
             'name' => ['required'],
             'description' => ['required'],
             'category_id' => ['required', 'integer'],
+            /*'products' => 'array',
+            'products.*' => 'exists:products.id'*/
         ];
     }
 

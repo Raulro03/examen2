@@ -22,6 +22,8 @@ class SubcategoryController extends Controller
 
     public function store(StoreSubcategoryRequest $request)
     {
+       /*$subcategory = ;
+       $subcategory->products()->attach($request->input('products', []));*/
 
         return new SubcategoryResource(Subcategory::create($request->validated()));
     }
@@ -33,7 +35,7 @@ class SubcategoryController extends Controller
 
     public function update(UpdateSubcategoryRequest $request, Subcategory $subcategory)
     {
-        $subcategory->update($request->validated());
+        $subcategory->update($request->all());
 
         return new SubcategoryResource($subcategory);
     }
