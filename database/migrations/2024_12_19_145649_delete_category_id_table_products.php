@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropForeign(['category_id']); // Usar el nombre completo
+            $table->dropForeign(['category_id']);
+            $table->dropColumn('category_id');// Usar el nombre completo
         });
     }
 
