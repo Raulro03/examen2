@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V3;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubcategoryRequest;
+use App\Http\Requests\UpdateSubcategoryRequest;
 use App\Http\Resources\SubcategoryResource;
 use App\Models\Subcategory;
 
@@ -30,7 +31,7 @@ class SubcategoryController extends Controller
         return new SubcategoryResource($subcategory);
     }
 
-    public function update(StoreSubcategoryRequest $request, Subcategory $subcategory)
+    public function update(UpdateSubcategoryRequest $request, Subcategory $subcategory)
     {
         $subcategory->update($request->validated());
 
