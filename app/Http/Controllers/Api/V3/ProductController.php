@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->paginate(9);
+        $products = Product::all()->paginate(9);
 
         return ProductResource::collection($products);
     }
