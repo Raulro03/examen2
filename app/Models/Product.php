@@ -17,7 +17,7 @@ class Product extends Model
         'price',
     ];
 
-    public function subcategory(): BelongsToMany
+    public function subcategories(): BelongsToMany
     {
         return $this->belongsToMany(Subcategory::class, 'product_subcategory');
     }
