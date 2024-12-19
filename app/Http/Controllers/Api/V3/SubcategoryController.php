@@ -11,7 +11,7 @@ class SubcategoryController extends Controller
 {
     public function index()
     {
-        return SubcategoryResource::collection(Subcategory::all());
+        return SubcategoryResource::collection(Subcategory::with('category')->paginate(10));
     }
 
     public function store(SubcategoryRequest $request)
@@ -37,4 +37,6 @@ class SubcategoryController extends Controller
 
         return response()->json();
     }
+
+
 }
