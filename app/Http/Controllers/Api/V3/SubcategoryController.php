@@ -48,5 +48,8 @@ class SubcategoryController extends Controller
         return response()->json();
     }
 
+    public function list(){
 
+        return SubcategoryResource::collection(Subcategory::with('category', 'products')->paginate(12));
+    }
 }
